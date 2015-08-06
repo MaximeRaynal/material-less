@@ -9,7 +9,7 @@
 //@theme: 'dark';
 
 
-.if (@choosed-them) when (@choosed-them = 'light') {
+.if (@choosed-theme) when (@choosed-theme = 'light') {
     @text-color: @light-text-color;
     @text-secondary-color: @light-text-secondary-color;
     @text-icons-color: @light-text-icons-color;
@@ -26,7 +26,7 @@
     @shadow-color: @light-shadow-color;
 }
 
-.if (@choosed-them) when (@choosed-them = 'dark') {
+.if (@choosed-theme) when (@choosed-theme = 'dark') {
     @text-color: @dark-text-color;
     @text-secondary-color: @dark-text-secondary-color;
     @text-icons-color: @dark-text-icons-color;
