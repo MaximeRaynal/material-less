@@ -1,5 +1,5 @@
 
-button {
+.material-button() {
 
     border: 0px none;
 
@@ -22,28 +22,63 @@ button {
 
     text-align: center;
 
-    &.flat {
-        background-color: fade(@black, 0%);
+    cursor: pointer;
+}
 
-        //color: @main-color;
+.material-raised-button(@btn-color, @btn-text-color: @dark-text-color) {
 
-        transition: background-color 0.2s ease-in-out;
+    .material-button();
 
-        &:hover {
-            background-color: @hoverd-flat-button;
-        }
+    transition: box-shadow 0.2s ease-in-out;
+    .raised-button-elevation();
+    background-color: @btn-color;
+    color: @btn-text-color;
 
+    &:active {
+        .raised-button-pressed-elevation();
+    }
+}
+
+.material-flat-button(@btn-text-color: @text-color) {
+
+    .material-button();
+
+    background-color: fade(@black, 0%);
+
+    color: @btn-text-color;
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: @hoverd-flat-button;
+    }
+}
+
+.material-input(@input-color: @main-color) {
+
+    display: block;
+
+    span {
+        display: block;
+        font-size: 0.7rem;
+        padding-left: 5px;
+
+        color: @input-color;
     }
 
-    &.raised {
-        transition: box-shadow 0.2s ease-in-out;
-        .raised-button-elevation();
-        background-color: @main-color;
-        color: @dark-text-color;
+    input {
+        display: block;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-style: solid;
+        border-color: @input-color;
+        width: 100%;
 
-        &:active {
-            .raised-button-pressed-elevation();
-        }
+        height: 24px;
+
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+        background-color: @paper-color;
     }
-
 }
