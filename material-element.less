@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.material-raised-button(@btn-color, @btn-text-color: @dark-text-color) {
+.material-raised-button(@btn-color: @main-color, @btn-text-color: @dark-text-color) {
 
     .material-button();
 
@@ -58,7 +58,7 @@
 
     display: block;
 
-    span {
+    label {
         display: block;
         font-size: 0.7rem;
         padding-left: 5px;
@@ -79,6 +79,42 @@
         padding-top: 2px;
         padding-bottom: 2px;
 
+        padding-left: -5px;
+
         background-color: @paper-color;
+    }
+}
+
+.material-app-bar(@app-background-color: @main-color) {
+
+    background-color: @app-background-color;
+
+    whidth: 100%;
+
+    display: flex;
+
+    font-size: 24px;
+
+    //line-height: 30px;
+
+    height: 64px * @dp-80dpi-factor;
+
+    padding-left: 24px * @dp-80dpi-factor;
+    padding-right: 24px * @dp-80dpi-factor;
+
+    padding-top: 24px * @dp-80dpi-factor;
+
+    .app-bar-elevation()
+}
+
+.material-card() {
+    .card-elevation();
+
+    border-radius: 2px * @dp-80dpi-factor;
+
+    transition: box-shadow 0.5s ease-in-out;
+
+    &:hover {
+        .card-picked-up-elevation();
     }
 }
