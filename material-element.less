@@ -3,14 +3,14 @@
 
     border: 0px none;
 
-    min-width: 64px * @dp-80dpi-factor;
-    height: 36px * @dp-80dpi-factor;
-    line-height: 36px * @dp-80dpi-factor;
+    min-width: 64px;
+    height: 36px;
+    line-height: 36px;
 
-    margin-left: 8px * @dp-80dpi-factor;
-    padding-left: 8px * @dp-80dpi-factor;
-    margin-right: 8px * @dp-80dpi-factor;
-    padding-right: 8px * @dp-80dpi-factor;
+    margin-left: 8px;
+    padding-left: 8px;
+    margin-right: 8px;
+    padding-right: 8px;
 
     text-transform: uppercase;
 
@@ -28,8 +28,6 @@
 .material-raised-button(@btn-color: @main-color, @btn-text-color: @dark-text-color) {
 
     .material-button();
-
-    transition: box-shadow 0.2s ease-in-out;
     .raised-button-elevation();
     background-color: @btn-color;
     color: @btn-text-color;
@@ -47,11 +45,46 @@
 
     color: @btn-text-color;
 
-    transition: background-color 0.2s ease-in-out;
+    transition+: background-color 0.2s ease-in-out;
 
     &:hover {
         background-color: @hoverd-flat-button;
     }
+}
+
+.material-floating-action-button(@btn-color: @accent-color-2, @btn-text-color: @dark-text-color) {
+    .floating-button-elevation();
+
+    position: fixed;
+    border: 0px none;
+
+    width: 56px;
+    height: 56px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 3px solid @btn-color;
+
+    border-radius: 50%;
+
+    display: block;
+
+    line-height: 53px;
+    text-align: center;
+
+    font-size: 24px;
+
+    background-color: @btn-color;
+    color: @btn-text-color;
+
+    cursor: pointer;
+
+    &:active {
+        .floating-button-pressed-elevation();
+        position: fixed;
+    }
+
 }
 
 .material-input(@input-color: @main-color) {
@@ -97,12 +130,12 @@
 
     //line-height: 30px;
 
-    height: 64px * @dp-80dpi-factor;
+    height: 64px;
 
-    padding-left: 24px * @dp-80dpi-factor;
-    padding-right: 24px * @dp-80dpi-factor;
+    padding-left: 24px;
+    padding-right: 24px;
 
-    padding-top: 24px * @dp-80dpi-factor;
+    padding-top: 24px;
 
     .app-bar-elevation()
 }
@@ -110,9 +143,7 @@
 .material-card() {
     .card-elevation();
 
-    border-radius: 2px * @dp-80dpi-factor;
-
-    transition: box-shadow 0.5s ease-in-out;
+    border-radius: 2px;
 
     &:hover {
         .card-picked-up-elevation();
