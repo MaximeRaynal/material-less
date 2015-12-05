@@ -177,7 +177,15 @@
             width: 0px;
             height: 100%;
             transition+: width 0.3s ease-in-out;
+            color: @light-text-color;
             .drawer-elevation();
+
+            & > label {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                font-size: 24px;
+            }
 
             ul {
                 margin: 0;
@@ -187,11 +195,18 @@
                     padding: 0;
                     display: block;
                     font-size: 14px;
-                    color: @light-text-color;
                     height: 48px;
                     line-height: 48px;
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
+
+                    .material-icons {
+                        margin-right: 32px;
+                    }
                 }
+
+
 
                 li.title {
                     height: 72px;
@@ -214,7 +229,7 @@
                      visibility 0.1s ease-in-out 0s 0.4s;
 
         menu {
-            width: 200px;
+            width: 250px;
         }
     }
 
